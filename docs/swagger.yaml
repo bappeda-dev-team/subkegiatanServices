@@ -1,0 +1,227 @@
+basePath: /
+definitions:
+  web.SubkegiatanCreateRequest:
+    description: Create Request Subkegiatan
+    properties:
+      kode_subkegiatan:
+        type: string
+      nama_subkegiatan:
+        type: string
+    required:
+    - kode_subkegiatan
+    - nama_subkegiatan
+    type: object
+  web.SubkegiatanUpdateRequest:
+    description: Update Request Subkegiatan
+    properties:
+      id:
+        type: string
+      kode_subkegiatan:
+        type: string
+      nama_subkegiatan:
+        type: string
+    required:
+    - kode_subkegiatan
+    - nama_subkegiatan
+    type: object
+  web.WebResponse:
+    description: Web Response
+    properties:
+      code:
+        type: integer
+      data: {}
+      status:
+        type: string
+    type: object
+host: localhost:8003
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: API For Master Subkegiatan Services
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Subkegiatan Service API
+  version: "1.0"
+paths:
+  /subkegiatan/create:
+    post:
+      consumes:
+      - application/json
+      description: Create a new subkegiatan
+      parameters:
+      - description: Create Subkegiatan
+        in: body
+        name: subkegiatan
+        required: true
+        schema:
+          $ref: '#/definitions/web.SubkegiatanCreateRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+      summary: Create Subkegiatan
+      tags:
+      - CREATE Subkegiatan
+  /subkegiatan/delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete an existing subkegiatan
+      parameters:
+      - description: Subkegiatan ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+      summary: Delete Subkegiatan
+      tags:
+      - DELETE Subkegiatan
+  /subkegiatan/detail/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Find By Id an existing subkegiatan
+      parameters:
+      - description: Subkegiatan ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+      summary: FindById subkegiatan
+      tags:
+      - GET Subkegiatan
+  /subkegiatan/findall:
+    get:
+      consumes:
+      - application/json
+      description: FindAll an existing subkegiatan
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+      summary: FindAll subkegiatan
+      tags:
+      - GET Subkegiatan
+  /subkegiatan/findkode/{kode_subkegiatan}:
+    get:
+      consumes:
+      - application/json
+      description: FindByKodeSubKegiatan an existing subkegiatan
+      parameters:
+      - description: Kode Subkegiatan
+        in: path
+        name: kode_subkegiatan
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+      summary: FindByKodeSubKegiatan subkegiatan
+      tags:
+      - GET Subkegiatan
+  /subkegiatan/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: Update an existing subkegiatan
+      parameters:
+      - description: Subkegiatan ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Update Subkegiatan
+        in: body
+        name: subkegiatan
+        required: true
+        schema:
+          $ref: '#/definitions/web.SubkegiatanUpdateRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/web.WebResponse'
+      summary: Update Subkegiatan
+      tags:
+      - UPDATE Subkegiatan
+schemes:
+- http
+swagger: "2.0"

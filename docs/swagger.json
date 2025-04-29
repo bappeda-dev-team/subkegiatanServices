@@ -1,0 +1,341 @@
+{
+    "schemes": [
+        "http"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "API For Master Subkegiatan Services",
+        "title": "Subkegiatan Service API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.swagger.io/support",
+            "email": "support@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8003",
+    "basePath": "/",
+    "paths": {
+        "/subkegiatan/create": {
+            "post": {
+                "description": "Create a new subkegiatan",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "CREATE Subkegiatan"
+                ],
+                "summary": "Create Subkegiatan",
+                "parameters": [
+                    {
+                        "description": "Create Subkegiatan",
+                        "name": "subkegiatan",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/web.SubkegiatanCreateRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/web.WebResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/web.WebResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/web.WebResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/subkegiatan/delete/{id}": {
+            "delete": {
+                "description": "Delete an existing subkegiatan",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "DELETE Subkegiatan"
+                ],
+                "summary": "Delete Subkegiatan",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Subkegiatan ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/web.WebResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/web.WebResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/web.WebResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/subkegiatan/detail/{id}": {
+            "get": {
+                "description": "Find By Id an existing subkegiatan",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "GET Subkegiatan"
+                ],
+                "summary": "FindById subkegiatan",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Subkegiatan ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/web.WebResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/web.WebResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/web.WebResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/subkegiatan/findall": {
+            "get": {
+                "description": "FindAll an existing subkegiatan",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "GET Subkegiatan"
+                ],
+                "summary": "FindAll subkegiatan",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/web.WebResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/web.WebResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/web.WebResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/subkegiatan/findkode/{kode_subkegiatan}": {
+            "get": {
+                "description": "FindByKodeSubKegiatan an existing subkegiatan",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "GET Subkegiatan"
+                ],
+                "summary": "FindByKodeSubKegiatan subkegiatan",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Kode Subkegiatan",
+                        "name": "kode_subkegiatan",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/web.WebResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/web.WebResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/web.WebResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/subkegiatan/update/{id}": {
+            "put": {
+                "description": "Update an existing subkegiatan",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "UPDATE Subkegiatan"
+                ],
+                "summary": "Update Subkegiatan",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Subkegiatan ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Update Subkegiatan",
+                        "name": "subkegiatan",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/web.SubkegiatanUpdateRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/web.WebResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/web.WebResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/web.WebResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "web.SubkegiatanCreateRequest": {
+            "description": "Create Request Subkegiatan",
+            "type": "object",
+            "required": [
+                "kode_subkegiatan",
+                "nama_subkegiatan"
+            ],
+            "properties": {
+                "kode_subkegiatan": {
+                    "type": "string"
+                },
+                "nama_subkegiatan": {
+                    "type": "string"
+                }
+            }
+        },
+        "web.SubkegiatanUpdateRequest": {
+            "description": "Update Request Subkegiatan",
+            "type": "object",
+            "required": [
+                "kode_subkegiatan",
+                "nama_subkegiatan"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "kode_subkegiatan": {
+                    "type": "string"
+                },
+                "nama_subkegiatan": {
+                    "type": "string"
+                }
+            }
+        },
+        "web.WebResponse": {
+            "description": "Web Response",
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer"
+                },
+                "data": {},
+                "status": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
