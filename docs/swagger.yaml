@@ -15,12 +15,13 @@ definitions:
     description: Update Request Subkegiatan
     properties:
       id:
-        type: string
+        type: integer
       kode_subkegiatan:
         type: string
       nama_subkegiatan:
         type: string
     required:
+    - id
     - kode_subkegiatan
     - nama_subkegiatan
     type: object

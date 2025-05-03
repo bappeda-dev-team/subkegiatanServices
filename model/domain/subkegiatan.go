@@ -1,7 +1,7 @@
 package domain
 
 type Subkegiatan struct {
-	Id              string
+	Id              int
 	KodeSubKegiatan string
 	NamaSubKegiatan string
 	CreatedAt       string

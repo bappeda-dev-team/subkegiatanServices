@@ -4,6 +4,7 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
+	"math/rand"
 	"subkegiatanServices/helper"
 	"subkegiatanServices/model/domain"
 	"subkegiatanServices/model/web"
@@ -53,10 +54,10 @@ func (service *SubkegiatanServiceImpl) Create(ctx context.Context, request web.S
 		return web.SubkegiatanResponse{}, fmt.Errorf("format kode tidak valid")
 	}
 
-	Id := fmt.Sprintf("SUB-KEG-%v", request.KodeSubKegiatan)
+	idRandom := rand.Intn(100000)
 
 	subkegiatan, err := service.subkegiatanRepository.Create(ctx, tx, domain.Subkegiatan{
-		Id:              Id,
+		Id:              idRandom,
 		NamaSubKegiatan: request.NamaSubKegiatan,
 		KodeSubKegiatan: request.KodeSubKegiatan,
 	})

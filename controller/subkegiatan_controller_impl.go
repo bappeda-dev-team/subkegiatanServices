@@ -2,6 +2,7 @@ package controller
 
 import (
 	"net/http"
+	"strconv"
 	"subkegiatanServices/model/web"
 	"subkegiatanServices/service"
 
@@ -70,7 +71,15 @@ func (controller *SubkegiatanControllerImpl) Update(c echo.Context) error {
 		return err
 	}
 
-	id := c.Param("id")
+	idString := c.Param("id")
+	id, err := strconv.Atoi(idString)
+	if err != nil {
+		return c.JSON(http.StatusBadRequest, web.WebResponse{
+			Code:   http.StatusBadRequest,
+			Status: "Invalid ID",
+			Data:   err.Error(),
+		})
+	}
 
 	SubkegiatanUpdateRequest.Id = id
 

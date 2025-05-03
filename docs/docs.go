@@ -312,12 +312,13 @@ const docTemplate = `{
             "description": "Update Request Subkegiatan",
             "type": "object",
             "required": [
+                "id",
                 "kode_subkegiatan",
                 "nama_subkegiatan"
             ],
             "properties": {
                 "id": {
-                    "type": "string"
+                    "type": "integer"
                 },
                 "kode_subkegiatan": {
                     "type": "string"

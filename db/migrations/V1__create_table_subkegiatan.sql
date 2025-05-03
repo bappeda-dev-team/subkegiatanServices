@@ -1,5 +1,5 @@
 CREATE TABLE tb_subkegiatan(
-    id VARCHAR(255) PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     kode_subkegiatan VARCHAR(255) NOT NULL,
     nama_subkegiatan VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
